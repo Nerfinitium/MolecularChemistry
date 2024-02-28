@@ -1,0 +1,11 @@
+Model Information:
+* title:	2020 Snow Globe
+* source:	https://sketchfab.com/3d-models/2020-snow-globe-7609c336710844da96e48416f7b84756
+* author:	Seth.a.Blaine (https://sketchfab.com/SethBlaine)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "2020 Snow Globe" (https://sketchfab.com/3d-models/2020-snow-globe-7609c336710844da96e48416f7b84756) by Seth.a.Blaine (https://sketchfab.com/SethBlaine) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
