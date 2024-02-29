@@ -6,6 +6,7 @@ const WhiteBoard = () => {
     const [currentIcon, setCurrentIcon] = useState(null);
     const [dragging, setDragging] = useState(false);
     const [placingIcon, setPlacingIcon] = useState(false);
+    const [idCounter, setIdCounter] = useState(0);
     const iconRefs = useRef([]);
 
     useEffect(() => {
@@ -17,28 +18,45 @@ const WhiteBoard = () => {
             const rect = iconRefs.current[index].getBoundingClientRect();
             return e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
         });
-
         if (iconUnderMouse) {
-            setCurrentIcon(iconUnderMouse.icon);
+            setCurrentIcon(iconUnderMouse.id);
             setDragging(true);
         } else if (currentIcon && placingIcon) {
-            const newIcon = { x: e.clientX - 16, y: e.clientY - 16, icon: currentIcon };
+            const newIcon = { x: e.clientX - 16, y: e.clientY - 16, icon: currentIcon, id: idCounter };
             setIcons(prevIcons => [...prevIcons, newIcon]);
             setCurrentIcon(null);
             setPlacingIcon(false);
+            setIdCounter(idCounter + 1);
         }
     };
     const handleMouseMove = (e) => {
         if (dragging && currentIcon) {
             setIcons(icons.map(icon => {
-                if (icon.icon === currentIcon) {
-                    return { ...icon, x: e.clientX - 16, y: e.clientY - 16 }; // subtract half the width and height of the icon
+                if (icon.id === currentIcon) {
+                    const newX = e.clientX - 16;
+                    const newY = e.clientY - 16;
+
+                    // Check for collision with other atoms
+                    for (let otherIcon of icons) {
+                        if (otherIcon.id !== icon.id) {
+                            const dx = otherIcon.x - newX;
+                            const dy = otherIcon.y - newY;
+                            const distance = Math.sqrt(dx * dx + dy * dy);
+
+                            if (distance < 32) { // assuming the atom size is 32
+                                // Atoms are overlapping, make them stick together
+                                return { ...icon, x: otherIcon.x, y: otherIcon.y };
+                            }
+                        }
+                    }
+
+                    // No collision, move the atom normally
+                    return { ...icon, x: newX, y: newY };
                 }
                 return icon;
             }));
         }
     };
-
 
     const handleMouseUp = () => {
         setDragging(false);
@@ -47,7 +65,7 @@ const WhiteBoard = () => {
     return (
         <div style={{ backgroundColor: 'white', width: '100%', height: '500px', position: 'relative' }} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
             {icons.map((icon, index) => (
-                <div key={index} style={{ position: 'absolute', top: icon.y, left: icon.x, userSelect: 'none' }} ref={el => iconRefs.current[index] = el}>
+                <div key={icon.id} style={{ position: 'absolute', top: icon.y, left: icon.x, userSelect: 'none' }} ref={el => iconRefs.current[index] = el}>
                     <button style={{ background: 'none', border: 'none' }}>
                         <img src={`src/assets/${icon.icon}.png`} alt="icon" style={{ width: '32px', height: '32px' }} />
                     </button>
