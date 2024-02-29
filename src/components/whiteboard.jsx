@@ -77,6 +77,10 @@ const WhiteBoard = () => {
     const handleMouseUp = () => {
         setDragging(false);
     };
+    const resetIcons = () => {
+        setIcons([]);
+    };
+
 
     return (
         <div style={{ backgroundColor: 'white', width: '100%', height: '500px', position: 'relative' }} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
@@ -88,7 +92,7 @@ const WhiteBoard = () => {
                 </div>
             ))}
             <div style={{ position: 'absolute', bottom: 0, width: '100%' }}>
-                <BlackBox setCurrentIcon={setCurrentIcon} setDragging={setDragging} setPlacingIcon={setPlacingIcon} />
+                <BlackBox setCurrentIcon={setCurrentIcon} setDragging={setDragging} setPlacingIcon={setPlacingIcon} resetIcons={resetIcons} />
             </div>
         </div>
     );
