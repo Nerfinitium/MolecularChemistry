@@ -12,7 +12,6 @@ const WhiteBoard = () => {
     useEffect(() => {
         iconRefs.current = iconRefs.current.slice(0, icons.length);
     }, [icons]);
-
     const handleMouseDown = (e) => {
         const iconUnderMouse = icons.find((icon, index) => {
             const rect = iconRefs.current[index].getBoundingClientRect();
@@ -45,7 +44,25 @@ const WhiteBoard = () => {
 
                             if (distance < 32) { // assuming the atom size is 32
                                 // Atoms are overlapping, make them stick together
-                                return { ...icon, x: otherIcon.x, y: otherIcon.y };
+                                if (Math.abs(dx) > Math.abs(dy)) {
+                                    // Collision is more horizontal than vertical
+                                    if (dx > 0) {
+                                        // Other atom is to the right
+                                        return { ...icon, x: otherIcon.x - 32, y: otherIcon.y };
+                                    } else {
+                                        // Other atom is to the left
+                                        return { ...icon, x: otherIcon.x + 32, y: otherIcon.y };
+                                    }
+                                } else {
+                                    // Collision is more vertical than horizontal
+                                    if (dy > 0) {
+                                        // Other atom is below
+                                        return { ...icon, x: otherIcon.x, y: otherIcon.y - 32 };
+                                    } else {
+                                        // Other atom is above
+                                        return { ...icon, x: otherIcon.x, y: otherIcon.y + 32 };
+                                    }
+                                }
                             }
                         }
                     }
@@ -57,7 +74,6 @@ const WhiteBoard = () => {
             }));
         }
     };
-
     const handleMouseUp = () => {
         setDragging(false);
     };

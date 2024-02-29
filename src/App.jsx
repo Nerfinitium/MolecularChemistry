@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { Hero, Navbar, BlackBox, WhiteBoard } from "./components";
+import {  Navbar, WhiteBoard } from "./components";
+
 
 const App = () => {
   return (
