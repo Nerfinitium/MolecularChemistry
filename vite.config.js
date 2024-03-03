@@ -5,7 +5,7 @@ import * as path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: 'MolecularChemistry',
+  base: '/MolecularChemistry',
   resolve: {
     alias: {
       src: path.resolve(__dirname, './src')
