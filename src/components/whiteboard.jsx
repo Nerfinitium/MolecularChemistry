@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import BlackBox from './BlackBox';
+import materials from './materials.json';
 
 const WhiteBoard = () => {
     const [icons, setIcons] = useState([]);
@@ -21,7 +22,15 @@ const WhiteBoard = () => {
             setCurrentIcon(iconUnderMouse.id);
             setDragging(true);
         } else if (currentIcon && placingIcon) {
-            const newIcon = { x: e.clientX - 16, y: e.clientY - 16, icon: currentIcon, id: idCounter };
+            const elementData = materials.elements.find(element => element.symbol === currentIcon);
+            const newIcon = {
+                x: e.clientX - 16,
+                y: e.clientY - 16,
+                icon: currentIcon,
+                id: idCounter,
+                type: elementData.name,
+                possibleBonds: elementData.possible_bonds.map(bond => bond.element)
+            };
             setIcons(prevIcons => [...prevIcons, newIcon]);
             setCurrentIcon(null);
             setPlacingIcon(false);
@@ -42,25 +51,25 @@ const WhiteBoard = () => {
                             const dy = otherIcon.y - newY;
                             const distance = Math.sqrt(dx * dx + dy * dy);
 
-                            if (distance < 32) { // assuming the atom size is 32
+                            if (distance < 72) { // assuming the atom size is 32
                                 // Atoms are overlapping, make them stick together
                                 if (Math.abs(dx) > Math.abs(dy)) {
                                     // Collision is more horizontal than vertical
                                     if (dx > 0) {
                                         // Other atom is to the right
-                                        return { ...icon, x: otherIcon.x - 32, y: otherIcon.y };
+                                        return { ...icon, x: otherIcon.x - 72, y: otherIcon.y };
                                     } else {
                                         // Other atom is to the left
-                                        return { ...icon, x: otherIcon.x + 32, y: otherIcon.y };
+                                        return { ...icon, x: otherIcon.x + 72, y: otherIcon.y };
                                     }
                                 } else {
                                     // Collision is more vertical than horizontal
                                     if (dy > 0) {
                                         // Other atom is below
-                                        return { ...icon, x: otherIcon.x, y: otherIcon.y - 32 };
+                                        return { ...icon, x: otherIcon.x, y: otherIcon.y - 72 };
                                     } else {
                                         // Other atom is above
-                                        return { ...icon, x: otherIcon.x, y: otherIcon.y + 32 };
+                                        return { ...icon, x: otherIcon.x, y: otherIcon.y + 72 };
                                     }
                                 }
                             }
@@ -87,7 +96,7 @@ const WhiteBoard = () => {
             {icons.map((icon, index) => (
                 <div key={icon.id} style={{ position: 'absolute', top: icon.y, left: icon.x, userSelect: 'none' }} ref={el => iconRefs.current[index] = el}>
                     <button style={{ background: 'none', border: 'none' }}>
-                        <img src={`src/assets/${icon.icon}.png`} alt="icon" style={{ width: '32px', height: '32px' }} />
+                        <img src={`src/assets/${icon.icon}.png`} alt="icon" style={{ width: '72px', height: '72px' }} />
                     </button>
                 </div>
             ))}
