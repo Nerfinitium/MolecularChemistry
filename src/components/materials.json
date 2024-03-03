@@ -114,3 +114,354 @@
         }
       ]
     },
+    {
+      "name": "Karbon",
+      "symbol": "C",
+      "atomic_number": 6,
+      "valence_electrons": 4,
+      "electronegativity": 2.55,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 109.5
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 143.0
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 145.0
+        },
+        {
+          "element": "Karbon",
+          "bond_type": "kovalent",
+          "bond_length": 154.0
+        },
+        {
+          "element": "Flor",
+          "bond_type": "kovalent",
+          "bond_length": 135.6
+        }
+        ]
+      }
+    ,
+    {
+      "name": "Azot",
+      "symbol": "N",
+      "atomic_number": 7,
+      "valence_electrons": 5,
+      "electronegativity": 3.04,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 101.17
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 148.0
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 145.0
+        }
+      ]
+    },
+    {
+      "name": "Oksijen",
+      "symbol": "O",
+      "atomic_number": 8,
+      "valence_electrons": 6,
+      "electronegativity": 3.44,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 95.72
+        },
+        {
+          "element": "Karbon",
+          "bond_type": "kovalent",
+          "bond_length": 143.0
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 148.0
+        }
+      ]
+    },
+    {
+      "name": "Flor",
+      "symbol": "F",
+      "atomic_number": 9,
+      "valence_electrons": 7,
+      "electronegativity": 3.98,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 95.66
+        },
+        {
+          "element": "Karbon",
+          "bond_type": "kovalent",
+          "bond_length": 135.6
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 136.0
+        }
+      ]
+    },
+    {
+      "name": "Neon",
+      "symbol": "Ne",
+      "atomic_number": 10,
+      "valence_electrons": 8,
+      "electronegativity": 0,
+      "possible_bonds": []
+    },
+    {
+      "name": "Sodyum",
+      "symbol": "Na",
+      "atomic_number": 11,
+      "valence_electrons": 1,
+      "electronegativity": 0.93,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 254.4
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "iyonik",
+          "bond_length": 227.1
+        },
+        {
+          "element": "Azot",
+          "bond_type": "iyonik",
+          "bond_length": 222.2
+        }
+      ]
+    },
+    {
+      "name": "Magnezyum",
+      "symbol": "Mg",
+      "atomic_number": 12,
+      "valence_electrons": 2,
+      "electronegativity": 1.31,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 173.8
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "iyonik",
+          "bond_length": 173.1
+        },
+        {
+          "element": "Azot",
+          "bond_type": "iyonik",
+          "bond_length": 170.3
+        }
+      ]
+    },
+    {
+      "name": "Alüminyum",
+      "symbol": "Al",
+      "atomic_number": 13,
+      "valence_electrons": 3,
+      "electronegativity": 1.61,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 118.4
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 127.8
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 125.1
+        }
+      ]
+    },
+    {
+      "name": "Silisyum",
+      "symbol": "Si",
+      "atomic_number": 14,
+      "valence_electrons": 4,
+      "electronegativity": 1.9,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 111.8
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 110.6
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 110.8
+        }]
+    },
+    {
+      "name": "Fosfor",
+      "symbol": "P",
+      "atomic_number": 15,
+      "valence_electrons": 5,
+      "electronegativity": 2.19,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 140.1
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 147.6
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 157.5
+        }
+      ]
+    },
+    {
+      "name": "Kükürt",
+      "symbol": "S",
+      "atomic_number": 16,
+      "valence_electrons": 6,
+      "electronegativity": 2.58,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 133.2
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 143.1
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 159.0
+        }
+      ]
+    },
+    {
+      "name": "Klor",
+      "symbol": "Cl",
+      "atomic_number": 17,
+      "valence_electrons": 7,
+      "electronegativity": 3.16,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 99.4
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 140.9
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 174.1
+        }
+      ]
+    },
+    {
+      "name": "Argon",
+      "symbol": "Ar",
+      "atomic_number": 18,
+      "valence_electrons": 8,
+      "electronegativity": 0,
+      "possible_bonds": []
+    },
+    {
+      "name": "Potasyum",
+      "symbol": "K",
+      "atomic_number": 19,
+      "valence_electrons": 1,
+      "electronegativity": 0.82,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 293.1
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "iyonik",
+          "bond_length": 252.0
+        },
+        {
+          "element": "Azot",
+          "bond_type": "iyonik",
+          "bond_length": 244.5
+        }
+      ]
+    },
+    {
+      "name": "Döteryum",
+      "symbol": "D",
+      "atomic_number": 1,
+      "valence_electrons": 1,
+      "electronegativity": 2.2,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 74.14
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 95.72
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 101.17
+        },
+        {
+          "element": "Karbon",
+          "bond_type": "kovalent",
+          "bond_length": 109.5
+        },
+        {
+          "element": "Flor",
+          "bond_type": "kovalent",
+          "bond_length": 95.66
+        }
+      ]
+  }
+    ]
+}
+
