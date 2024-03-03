@@ -1,3 +1,116 @@
 {
-
-}
+  "elements": [
+    {
+      "name": "Hidrojen",
+      "symbol": "H",
+      "atomic_number": 1,
+      "valence_electrons": 1,
+      "electronegativity": 2.2,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 74.14
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 95.72
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 101.17
+        },
+        {
+          "element": "Karbon",
+          "bond_type": "kovalent",
+          "bond_length": 109.5
+        },
+        {
+          "element": "Flor",
+          "bond_type": "kovalent",
+          "bond_length": 95.66
+        }
+      ]
+    },
+    {
+      "name": "Helyum",
+      "symbol": "He",
+      "atomic_number": 2,
+      "valence_electrons": 2,
+      "electronegativity": 0,
+      "possible_bonds": []
+    },
+    {
+      "name": "Lityum",
+      "symbol": "Li",
+      "atomic_number": 3,
+      "valence_electrons": 1,
+      "electronegativity": 1.0,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 160.9
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "iyonik",
+          "bond_length": 192.7
+        },
+        {
+          "element": "Azot",
+          "bond_type": "iyonik",
+          "bond_length": 190.4
+        }
+      ]
+    },
+    {
+      "name": "Berilyum",
+      "symbol": "Be",
+      "atomic_number": 4,
+      "valence_electrons": 2,
+      "electronegativity": 1.57,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 133.1
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 161.3
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 156.2
+        }
+      ]
+    },
+    {
+      "name": "Bor",
+      "symbol": "B",
+      "atomic_number": 5,
+      "valence_electrons": 3,
+      "electronegativity": 2.04,
+      "possible_bonds": [
+        {
+          "element": "Hidrojen",
+          "bond_type": "kovalent",
+          "bond_length": 131.7
+        },
+        {
+          "element": "Oksijen",
+          "bond_type": "kovalent",
+          "bond_length": 137.1
+        },
+        {
+          "element": "Azot",
+          "bond_type": "kovalent",
+          "bond_length": 145.0
+        }
+      ]
+    },

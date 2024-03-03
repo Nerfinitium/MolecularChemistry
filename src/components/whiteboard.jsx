@@ -83,7 +83,7 @@ const WhiteBoard = () => {
 
 
     return (
-        <div style={{ backgroundColor: 'white', width: '100%', height: '500px', position: 'relative' }} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
+        <div style={{ backgroundColor: 'black', width: '100vw', height: '100vh', position: 'relative' }} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
             {icons.map((icon, index) => (
                 <div key={icon.id} style={{ position: 'absolute', top: icon.y, left: icon.x, userSelect: 'none' }} ref={el => iconRefs.current[index] = el}>
                     <button style={{ background: 'none', border: 'none' }}>

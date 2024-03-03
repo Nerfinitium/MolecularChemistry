@@ -5,7 +5,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./cay/scene.gltf");
+  const computer = useGLTF("./su/su.gltf");
 
 
 
@@ -68,6 +68,8 @@ const ComputersCanvas = () => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+            // maxAzimuthAngle={Math.PI / 2}
+            // minAzimuthAngle={-Math.PI / 2}
         />
         <Computers isMobile={isMobile} />
       </Suspense>
