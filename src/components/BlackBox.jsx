@@ -17,9 +17,10 @@ const BlackBox = ({ setCurrentIcon, setPlacingIcon, resetIcons}) => {
             padding: '20px',
             border: '2px solid white'
         }}>
-            <button style={{margin: '10px', fontFamily: 'Arial'} } onClick={() => handleClick('H')}>Hidrojen</button>
+            <button style={{margin: '10px'}} onClick={() => handleClick('H')}>Hidrojen</button>
             <button style={{margin: '10px'}} onClick={() => handleClick('O')}>Oksijen</button>
             <button style={{margin: '10px'}} onClick={() => handleClick('C')}>Karbon</button>
+            <button style={{margin: '10px'}} onClick={() => handleClick('N')}>Azot</button>
             <button style={{margin: '10px'}} onClick={() => handleClick('Cl')}>Klor</button>
             <button style={{margin: '10px'}} onClick={resetIcons}>Reset</button>
         </div>
