@@ -38,54 +38,44 @@ const WhiteBoard = () => {
                 return 'Water';
             }
         }
-
         if (hydrogenAtoms.length >= 3 && nitrogenAtoms.length >= 1) {
-            const areConnected = hydrogenAtoms.some(hydrogen1 => {
-                return hydrogenAtoms.some(hydrogen2 => {
-                    return hydrogenAtoms.some(hydrogen3 => {
-                        return nitrogenAtoms.some(nitrogen => {
-                            const distance1 = Math.sqrt(
-                                Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2)
-                            );
-                            const distance2 = Math.sqrt(
-                                Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2)
-                            );
-                            const distance3 = Math.sqrt(
-                                Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2)
-                            );
-                            return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                        });
-                    });
-                });
-            });
+            const areConnected = hydrogenAtoms.some(hydrogen1 =>
+                hydrogenAtoms.some(hydrogen2 =>
+                    hydrogenAtoms.some(hydrogen3 => {
+                        const distance1 = Math.sqrt(Math.pow(hydrogen1.x - nitrogenAtoms[0].x, 2) + Math.pow(hydrogen1.y - nitrogenAtoms[0].y, 2));
+                        const distance2 = Math.sqrt(Math.pow(hydrogen2.x - nitrogenAtoms[0].x, 2) + Math.pow(hydrogen2.y - nitrogenAtoms[0].y, 2));
+                        const distance3 = Math.sqrt(Math.pow(hydrogen3.x - nitrogenAtoms[0].x, 2) + Math.pow(hydrogen3.y - nitrogenAtoms[0].y, 2));
+
+                        return distance1 < 80 && distance2 < 80 && distance3 < 80;
+                    })
+                )
+            );
 
             if (areConnected) {
                 return 'Ammonia';
             }
         }
 
+
         if (nitrogenAtoms.length >= 1 && carbonAtoms.length >= 1 && hydrogenAtoms.length >= 1) {
-            const areConnected = nitrogenAtoms.some(nitrogen => {
-                return carbonAtoms.some(carbon => {
-                    return hydrogenAtoms.some(hydrogen => {
-                        const distance1 = Math.sqrt(
-                            Math.pow(nitrogen.x - carbon.x, 2) + Math.pow(nitrogen.y - carbon.y, 2)
-                        );
-                        const distance2 = Math.sqrt(
-                            Math.pow(nitrogen.x - hydrogen.x, 2) + Math.pow(nitrogen.y - hydrogen.y, 2)
-                        );
-                        const distance3 = Math.sqrt(
-                            Math.pow(carbon.x - hydrogen.x, 2) + Math.pow(carbon.y - hydrogen.y, 2)
-                        );
-                        return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                    });
-                });
-            });
+            const areConnected = nitrogenAtoms.some(nitrogen =>
+                carbonAtoms.some(carbon =>
+                    hydrogenAtoms.some(hydrogen => {
+                        const distanceNC = Math.sqrt(Math.pow(nitrogen.x - carbon.x, 2) + Math.pow(nitrogen.y - carbon.y, 2));
+                        const distanceNH = Math.sqrt(Math.pow(nitrogen.x - hydrogen.x, 2) + Math.pow(nitrogen.y - hydrogen.y, 2));
+                        const distanceCH = Math.sqrt(Math.pow(carbon.x - hydrogen.x, 2) + Math.pow(carbon.y - hydrogen.y, 2));
+
+                        return distanceNC < 80 && distanceNH < 80 && distanceCH < 80;
+                    })
+                )
+            );
 
             if (areConnected) {
                 return 'Methyl Isocyanide';
             }
         }
+
+
         if (carbonAtoms >= 2 && nitrogenAtoms.length >= 2) {
             const areConnected = hydrogenAtoms.some(hydrogen1 => {
                 return hydrogenAtoms.some(hydrogen2 => {
@@ -110,176 +100,143 @@ const WhiteBoard = () => {
                 return 'Cyanogen';
             }
         }
+
         if (nitrogenAtoms.length >= 1 && oxygenAtoms.length >= 2) {
-            const areConnected = hydrogenAtoms.some(hydrogen1 => {
-                return hydrogenAtoms.some(hydrogen2 => {
-                    return hydrogenAtoms.some(hydrogen3 => {
-                        return nitrogenAtoms.some(nitrogen => {
-                            const distance1 = Math.sqrt(
-                                Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2)
-                            );
-                            const distance2 = Math.sqrt(
-                                Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2)
-                            );
-                            const distance3 = Math.sqrt(
-                                Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2)
-                            );
+            const areConnected = hydrogenAtoms.some(hydrogen1 =>
+                hydrogenAtoms.some(hydrogen2 =>
+                    hydrogenAtoms.some(hydrogen3 =>
+                        nitrogenAtoms.some(nitrogen => {
+                            const distance1 = Math.sqrt(Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2));
+                            const distance2 = Math.sqrt(Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2));
+                            const distance3 = Math.sqrt(Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2));
+
                             return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                        });
-                    });
-                });
-            });
+                        })
+                    )
+                )
+            );
 
             if (areConnected) {
                 return 'Nitrogen Dioxide';
             }
         }
+
         if (nitrogenAtoms.length >= 1 && chlorineAtoms.length >= 3) {
-            const areConnected = hydrogenAtoms.some(hydrogen1 => {
-                return hydrogenAtoms.some(hydrogen2 => {
-                    return hydrogenAtoms.some(hydrogen3 => {
-                        return nitrogenAtoms.some(nitrogen => {
-                            const distance1 = Math.sqrt(
-                                Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2)
-                            );
-                            const distance2 = Math.sqrt(
-                                Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2)
-                            );
-                            const distance3 = Math.sqrt(
-                                Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2)
-                            );
+            const areConnected = hydrogenAtoms.some(hydrogen1 =>
+                hydrogenAtoms.some(hydrogen2 =>
+                    hydrogenAtoms.some(hydrogen3 =>
+                        nitrogenAtoms.some(nitrogen => {
+                            const distance1 = Math.sqrt(Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2));
+                            const distance2 = Math.sqrt(Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2));
+                            const distance3 = Math.sqrt(Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2));
+
                             return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                        });
-                    });
-                });
-            });
+                        })
+                    )
+                )
+            );
 
             if (areConnected) {
                 return 'Nitrogen Trichloride';
             }
         }
-        if (carbonAtoms.length >= 1 && oxygenAtoms.length >= 1) {
-            const areConnected = hydrogenAtoms.some(hydrogen1 => {
-                return hydrogenAtoms.some(hydrogen2 => {
-                    return hydrogenAtoms.some(hydrogen3 => {
-                        return nitrogenAtoms.some(nitrogen => {
-                            const distance1 = Math.sqrt(
-                                Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2)
-                            );
-                            const distance2 = Math.sqrt(
-                                Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2)
-                            );
-                            const distance3 = Math.sqrt(
-                                Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2)
-                            );
+
+        if (carbonAtoms.length >= 1 && oxygenAtoms.length >= 2) {
+            const areConnected = hydrogenAtoms.some(hydrogen1 =>
+                hydrogenAtoms.some(hydrogen2 =>
+                    hydrogenAtoms.some(hydrogen3 =>
+                        oxygenAtoms.some(oxygen => {
+                            const distance1 = Math.sqrt(Math.pow(hydrogen1.x - oxygen.x, 2) + Math.pow(hydrogen1.y - oxygen.y, 2));
+                            const distance2 = Math.sqrt(Math.pow(hydrogen2.x - oxygen.x, 2) + Math.pow(hydrogen2.y - oxygen.y, 2));
+                            const distance3 = Math.sqrt(Math.pow(hydrogen3.x - oxygen.x, 2) + Math.pow(hydrogen3.y - oxygen.y, 2));
+
                             return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                        });
-                    });
-                });
-            });
+                        })
+                    )
+                )
+            );
 
             if (areConnected) {
-                return 'Carbon monoxide';
+                return 'Carbon Dioxide';
             }
         }
+
         if (oxygenAtoms.length >= 1 && chlorineAtoms.length >= 2) {
-            const areConnected = hydrogenAtoms.some(hydrogen1 => {
-                return hydrogenAtoms.some(hydrogen2 => {
-                    return hydrogenAtoms.some(hydrogen3 => {
-                        return nitrogenAtoms.some(nitrogen => {
-                            const distance1 = Math.sqrt(
-                                Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2)
-                            );
-                            const distance2 = Math.sqrt(
-                                Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2)
-                            );
-                            const distance3 = Math.sqrt(
-                                Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2)
-                            );
+            const areConnected = hydrogenAtoms.some(hydrogen1 =>
+                hydrogenAtoms.some(hydrogen2 =>
+                    hydrogenAtoms.some(hydrogen3 =>
+                        oxygenAtoms.some(oxygen => {
+                            const distance1 = Math.sqrt(Math.pow(hydrogen1.x - oxygen.x, 2) + Math.pow(hydrogen1.y - oxygen.y, 2));
+                            const distance2 = Math.sqrt(Math.pow(hydrogen2.x - oxygen.x, 2) + Math.pow(hydrogen2.y - oxygen.y, 2));
+                            const distance3 = Math.sqrt(Math.pow(hydrogen3.x - oxygen.x, 2) + Math.pow(hydrogen3.y - oxygen.y, 2));
+
                             return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                        });
-                    });
-                });
-            });
+                        })
+                    )
+                )
+            );
 
             if (areConnected) {
-                return 'Oxygen difuirode';
+                return 'Chlorine Dioxide';
             }
         }
+
 
         if (carbonAtoms.length >= 1 && chlorineAtoms.length >= 4) {
-            const areConnected = hydrogenAtoms.some(hydrogen1 => {
-                return hydrogenAtoms.some(hydrogen2 => {
-                    return hydrogenAtoms.some(hydrogen3 => {
-                        return nitrogenAtoms.some(nitrogen => {
-                            const distance1 = Math.sqrt(
-                                Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2)
-                            );
-                            const distance2 = Math.sqrt(
-                                Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2)
-                            );
-                            const distance3 = Math.sqrt(
-                                Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2)
-                            );
+            const areConnected = hydrogenAtoms.some(hydrogen1 =>
+                hydrogenAtoms.some(hydrogen2 =>
+                    hydrogenAtoms.some(hydrogen3 =>
+                        chlorineAtoms.some(chlorine => {
+                            const distance1 = Math.sqrt(Math.pow(hydrogen1.x - chlorine.x, 2) + Math.pow(hydrogen1.y - chlorine.y, 2));
+                            const distance2 = Math.sqrt(Math.pow(hydrogen2.x - chlorine.x, 2) + Math.pow(hydrogen2.y - chlorine.y, 2));
+                            const distance3 = Math.sqrt(Math.pow(hydrogen3.x - chlorine.x, 2) + Math.pow(hydrogen3.y - chlorine.y, 2));
+
                             return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                        });
-                    });
-                });
-            });
+                        })
+                    )
+                )
+            );
 
             if (areConnected) {
-                return 'carbon tetrachlorine';
+                return 'Carbon Tetrachloride';
             }
         }
+
         if (carbonAtoms.length >= 1 && hydrogenAtoms.length >= 4) {
-            const areConnected = hydrogenAtoms.some(hydrogen1 => {
-                return hydrogenAtoms.some(hydrogen2 => {
-                    return hydrogenAtoms.some(hydrogen3 => {
-                        return nitrogenAtoms.some(nitrogen => {
-                            const distance1 = Math.sqrt(
-                                Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2)
-                            );
-                            const distance2 = Math.sqrt(
-                                Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2)
-                            );
-                            const distance3 = Math.sqrt(
-                                Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2)
-                            );
-                            return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                        });
-                    });
-                });
-            });
+            const areConnected = hydrogenAtoms.some(hydrogen1 =>
+                hydrogenAtoms.some(hydrogen2 =>
+                    hydrogenAtoms.some(hydrogen3 =>
+                        hydrogenAtoms.some(hydrogen4 => {
+                            const distance1 = Math.sqrt(Math.pow(hydrogen1.x - carbonAtoms[0].x, 2) + Math.pow(hydrogen1.y - carbonAtoms[0].y, 2));
+                            const distance2 = Math.sqrt(Math.pow(hydrogen2.x - carbonAtoms[0].x, 2) + Math.pow(hydrogen2.y - carbonAtoms[0].y, 2));
+                            const distance3 = Math.sqrt(Math.pow(hydrogen3.x - carbonAtoms[0].x, 2) + Math.pow(hydrogen3.y - carbonAtoms[0].y, 2));
+                            const distance4 = Math.sqrt(Math.pow(hydrogen4.x - carbonAtoms[0].x, 2) + Math.pow(hydrogen4.y - carbonAtoms[0].y, 2));
+
+                            return distance1 < 80 && distance2 < 80 && distance3 < 80 && distance4 < 80;
+                        })
+                    )
+                )
+            );
 
             if (areConnected) {
                 return 'Methane';
             }
         }
+
         if (hydrogenAtoms.length >= 1 && chlorineAtoms.length >= 1) {
-            const areConnected = hydrogenAtoms.some(hydrogen1 => {
-                return hydrogenAtoms.some(hydrogen2 => {
-                    return hydrogenAtoms.some(hydrogen3 => {
-                        return nitrogenAtoms.some(nitrogen => {
-                            const distance1 = Math.sqrt(
-                                Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2)
-                            );
-                            const distance2 = Math.sqrt(
-                                Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2)
-                            );
-                            const distance3 = Math.sqrt(
-                                Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2)
-                            );
-                            return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                        });
-                    });
+            const areConnected = hydrogenAtoms.some(hydrogen => {
+                return chlorineAtoms.some(chlorine => {
+                    const distance = Math.sqrt(Math.pow(hydrogen.x - chlorine.x, 2) + Math.pow(hydrogen.y - chlorine.y, 2));
+                    return distance < 80;
                 });
             });
 
             if (areConnected) {
-                return 'Hyrogen chloride';
+                return 'Hydrogen Chloride';
             }
         }
-        if (hydrogenAtoms.length >= 1 && oxygenAtoms.length >= 1 && carbonAtoms.length >= 1 && nitrogenAtoms >= 1) {
+
+        if (hydrogenAtoms.length >= 1 && oxygenAtoms.length >= 1 && carbonAtoms.length >= 1 && nitrogenAtoms.length >= 1) {
             const areConnected = hydrogenAtoms.some(hydrogen1 => {
                 return hydrogenAtoms.some(hydrogen2 => {
                     return hydrogenAtoms.some(hydrogen3 => {
@@ -299,35 +256,31 @@ const WhiteBoard = () => {
                 });
             });
 
-            if (areConnected) {
+        if (areConnected) {
                 return 'Cyannic acid';
             }
         }
 
-        if (carbonAtoms.length >= 10 && hydrogenAtoms.length >= 15 && nitrogenAtoms.length >=  1) {
-            const areConnected = hydrogenAtoms.some(hydrogen1 => {
-                return hydrogenAtoms.some(hydrogen2 => {
-                    return hydrogenAtoms.some(hydrogen3 => {
-                        return nitrogenAtoms.some(nitrogen => {
-                            const distance1 = Math.sqrt(
-                                Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2)
-                            );
-                            const distance2 = Math.sqrt(
-                                Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2)
-                            );
-                            const distance3 = Math.sqrt(
-                                Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2)
-                            );
+        if (carbonAtoms.length >= 10 && hydrogenAtoms.length >= 15 && nitrogenAtoms.length >= 1) {
+            const areConnected = hydrogenAtoms.some(hydrogen1 =>
+                hydrogenAtoms.some(hydrogen2 =>
+                    hydrogenAtoms.some(hydrogen3 =>
+                        nitrogenAtoms.some(nitrogen => {
+                            const distance1 = Math.sqrt(Math.pow(hydrogen1.x - nitrogen.x, 2) + Math.pow(hydrogen1.y - nitrogen.y, 2));
+                            const distance2 = Math.sqrt(Math.pow(hydrogen2.x - nitrogen.x, 2) + Math.pow(hydrogen2.y - nitrogen.y, 2));
+                            const distance3 = Math.sqrt(Math.pow(hydrogen3.x - nitrogen.x, 2) + Math.pow(hydrogen3.y - nitrogen.y, 2));
+
                             return distance1 < 80 && distance2 < 80 && distance3 < 80;
-                        });
-                    });
-                });
-            });
+                        })
+                    )
+                )
+            );
 
             if (areConnected) {
-                return 'Methan Fethamine';
+                return 'Methamphetamine';
             }
         }
+
 
 
 
@@ -490,7 +443,6 @@ const WhiteBoard = () => {
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the water molecule representation */}
-                        <img src="path/to/water-molecule.png" alt="Water Molecule" style={{ width: '120px', height: '120px' }} />
                     </>
                 )}
 
@@ -498,7 +450,6 @@ const WhiteBoard = () => {
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the ammonia molecule representation */}
-                        <img src="path/to/ammonia-molecule.png" alt="Ammonia Molecule" style={{ width: '120px', height: '120px' }} />
                     </>
                 )}
 
@@ -506,7 +457,6 @@ const WhiteBoard = () => {
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the methyl isocyanide molecule representation */}
-                        <img src="path/to/methyl-isocyanide-molecule.png" alt="Methyl Isocyanide Molecule" style={{ width: '120px', height: '120px' }} />
                     </>
                 )}
 
@@ -514,57 +464,63 @@ const WhiteBoard = () => {
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the methyl isocyanide molecule representation */}
-                        <img src="path/to/methyl-isocyanide-molecule.png" alt="Methyl Isocyanide Molecule" style={{ width: '120px', height: '120px' }} />
                     </>
                 )}
                 {moleculeDetails === 'Nitrogen Dioxide' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the methyl isocyanide molecule representation */}
-                        <img src="path/to/methyl-isocyanide-molecule.png" alt="Methyl Isocyanide Molecule" style={{ width: '120px', height: '120px' }} />
                     </>
                 )}
-                {moleculeDetails === 'Carbon monoxide' && (
+                {moleculeDetails === 'Nitrogen Trichloride' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the methyl isocyanide molecule representation */}
-                        <img src="path/to/methyl-isocyanide-molecule.png" alt="Methyl Isocyanide Molecule" style={{ width: '120px', height: '120px' }} />
                     </>
                 )}
-                {moleculeDetails === 'Oxygen difuirode' && (
+                {moleculeDetails === 'Carbon Dioxide' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the methyl isocyanide molecule representation */}
-                        <img src="path/to/methyl-isocyanide-molecule.png" alt="Methyl Isocyanide Molecule" style={{ width: '120px', height: '120px' }} />
+                    </>
+                )}
+                {moleculeDetails === 'Chlorine Dioxide' && (
+                    <>
+                        <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
+                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
                 {moleculeDetails === 'Methane' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the methyl isocyanide molecule representation */}
-                        <img src="path/to/methyl-isocyanide-molecule.png" alt="Methyl Isocyanide Molecule" style={{ width: '120px', height: '120px' }} />
                     </>
                 )}
 
-                {moleculeDetails === 'Hyrogen chloride' && (
+                {moleculeDetails === 'Carbon Tetrachloride' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the methyl isocyanide molecule representation */}
-                        <img src="path/to/methyl-isocyanide-molecule.png" alt="Methyl Isocyanide Molecule" style={{ width: '120px', height: '120px' }} />
                     </>
                 )}
                 {moleculeDetails === 'Cyannic acid' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the methyl isocyanide molecule representation */}
-                        <img src="path/to/methyl-isocyanide-molecule.png" alt="Methyl Isocyanide Molecule" style={{ width: '120px', height: '120px' }} />
                     </>
                 )}
-                {moleculeDetails === 'Methan Fethamine' && (
+                {moleculeDetails === 'Hydrogen Chloride' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
                         {/* Adjust the size of the methyl isocyanide molecule representation */}
-                        <img src="path/to/methyl-isocyanide-molecule.png" alt="Methyl Isocyanide Molecule" style={{ width: '120px', height: '120px' }} />
+                    </>
+
+                )}
+
+                {moleculeDetails === 'Methamphetamine' && (
+                    <>
+                        <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
+                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
 
