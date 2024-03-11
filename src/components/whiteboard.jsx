@@ -442,77 +442,65 @@ const WhiteBoard = () => {
                 {moleculeDetails === 'Water' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the water molecule representation */}
                     </>
                 )}
 
                 {moleculeDetails === 'Ammonia' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the ammonia molecule representation */}
                     </>
                 )}
 
                 {moleculeDetails === 'Methyl Isocyanide' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
 
                 {moleculeDetails === 'Cyanogen' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
                 {moleculeDetails === 'Nitrogen Dioxide' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
                 {moleculeDetails === 'Nitrogen Trichloride' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
                 {moleculeDetails === 'Carbon Dioxide' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
                 {moleculeDetails === 'Chlorine Dioxide' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
                 {moleculeDetails === 'Methane' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
 
                 {moleculeDetails === 'Carbon Tetrachloride' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
                 {moleculeDetails === 'Cyannic acid' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
                 {moleculeDetails === 'Hydrogen Chloride' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
 
                 )}
@@ -520,7 +508,6 @@ const WhiteBoard = () => {
                 {moleculeDetails === 'Methamphetamine' && (
                     <>
                         <h2 style={{ fontSize: '24px' }}>{moleculeDetails}</h2>
-                        {/* Adjust the size of the methyl isocyanide molecule representation */}
                     </>
                 )}
 
