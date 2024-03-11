@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BlackBox = ({ setCurrentIcon, setPlacingIcon, resetIcons}) => {
+const BlackBox = ({handleShowModal, setCurrentIcon, setPlacingIcon, resetIcons}) => {
     const handleClick = (icon) => {
         setCurrentIcon(icon);
         setPlacingIcon(true);
@@ -23,6 +23,7 @@ const BlackBox = ({ setCurrentIcon, setPlacingIcon, resetIcons}) => {
             <button style={{margin: '10px'}} onClick={() => handleClick('N')}>Azot</button>
             <button style={{margin: '10px'}} onClick={() => handleClick('Cl')}>Klor</button>
             <button style={{margin: '10px'}} onClick={resetIcons}>Reset</button>
+            <button style={{margin: '10px'}} onClick={handleShowModal}>Show Molecule</button>
         </div>
     );
 };
