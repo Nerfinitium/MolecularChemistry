@@ -72,7 +72,7 @@ const Navbar = () => {
                 </div>
             </div>
             <a className='text-white text-[18px] font-bold cursor-pointer flex' > Made By ~ Emir Bulduk</a>
-
+            <img src='/src/assets/FOc3eW8A_400x400.jpg' alt="logo" className="w-[50px] h-[50px]" />
         </nav>
 
     )
