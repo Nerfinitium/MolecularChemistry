@@ -25,6 +25,7 @@ const BlackBox = ({handleShowModal, setCurrentIcon, setPlacingIcon, resetIcons})
             <button style={{margin: '10px'}} onClick={resetIcons}>Reset</button>
             <button style={{margin: '10px'}} onClick={handleShowModal}>Show Molecule</button>
         </div>
+        //
     );
 };
 
